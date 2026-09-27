@@ -26,7 +26,8 @@ Os dados são oriundos de extrações do sistema de ITSM da empresa (operacional
 O processo de ingestão foi realizado na plataforma **Databricks Free Edition**. Como primeira etapa, os arquivos CSV foram transferidos para a nuvem utilizando o sistema de **Volumes do Unity Catalog** (caminho: `/Volumes/workspace/default/dados_chamados/`). 
 O script completo responsável por esta carga bruta encontra-se no ficheiro de Notebook disponibilizado neste repositório.
 
-![Upload dos Dados](COLOQUE AQUI O LINK DA IMAGEM Base_ArquivosCSV.png)
+![Upload dos Dados](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Upload_Dados_Base.png)
+![Base_ArquivosCSV.png](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Base_ArquivosCSV.png)
 
 ---
 
@@ -50,7 +51,7 @@ A governança semântica foi implementada via DDL diretamente no *Unity Catalog*
 | `fato_chamados` | `sla_horas_limite` | DECIMAL | 1.0, 2.0, 4.0, 8.0 | Teto máximo permitido por prioridade | Regra de negócio inserida na Gold |
 | `fato_chamados` | `sla_cumprido_flag` | INT | 0 (Estourou) ou 1 (No prazo) | Indicador binário de sucesso de SLA | Cálculo lógico na tabela fato |
 
-![Catálogo de Dados no Unity Catalog](COLOQUE AQUI O LINK DA IMAGEM Tabela_Fato_Overview.png)
+![Catálogo de Dados no Unity Catalog](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Tabela_Fato_Overview.png)
 
 ---
 
@@ -82,11 +83,11 @@ Com a camada Gold materializada, o pipeline analítico demonstrou valor de negó
 3. **Tempo Médio de Resolução:** O indicador de tempo médio revela que os incidentes de Prioridade 3 demoram, por vezes, cerca de 95 horas no N1, um valor muitíssimo superior à meta estabelecida de 4 horas (provocando o chumbo na meta de SLA).
 4. A análise de sazonalidade revelou que a Segunda-Feira concentra o maior volume de aberturas de chamados na semana, com 1631 tickets. Este dado é vital para a gestão, pois permite readequar a escala técnica de primeira linha (N1) para evitar a degradação da taxa de cumprimento do SLA neste dia específico.
 
-![Consulta Analítica com Metas de SLA](COLOQUE AQUI O LINK DA IMAGEM Celula_5_Final.png)
+![Consulta Analítica com Metas de SLA](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Celula_5_Final.png)
 
-![Dashboard Analítico de SLA por Prioridade e Grupo](COLOQUE AQUI O LINK DA IMAGEM Celula_5_SLA.png)
+![Dashboard Analítico de SLA por Prioridade e Grupo](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Celula_5_SLA.png)
 
-![Dashboard Analítico da Sazonalidade](COLOQUE AQUI O LINK DA IMAGEM Consulta_Extra.png)
+![Dashboard Analítico da Sazonalidade](https://github.com/marcelsfonseca/MVP-Nexus/blob/main/Consulta%20Extra.png)
 
 ---
 
